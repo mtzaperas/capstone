@@ -45,5 +45,5 @@ Classify customer service calls into positive or negative. I actually found out 
 * Presentation: Slides with visualizations to show results, maybe a demo
 
 **Data Sources** are unlabeled or not an exact fit
-* Speech Recognition Data ([not sure of format](http://www.voxforge.org/home/downloads/speech/english/davidlynnthomson-20170222-hej#-jNRPfqpMudd0ArtQ0ZusQ))
+* Speech Recognition Data ([not sure of format](http://www.voxforge.org/home/downloads/speech/english))
 * Mood of Songs Data ([jupyter notebook loads it](https://github.com/rasbt/musicmood))
