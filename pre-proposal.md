@@ -50,14 +50,35 @@ Classify customer service calls into positive or negative. I actually found out 
 
 ## Predicting Traffic Accidents
 
-Predict traffic accidents using past accident info, weather, event info (acl), etc
+#### This seems to be the most interesting to everyone I've talked to (Chris, Dan, Ryan, Edward)
 
-**What am I attempting?**
+Predict traffic accidents using past accident information, weather, and event info (such as ACL) into account.
+
+**What am I attempting?** To predict the roads/areas where traffic accidents are most likely to occur. Understand the dominant features, look at trends over time.
 
 **Expected to use:**
 * EDA: python, (AWS for big data)
 * Algorithm:
-* Presentation: Slides with visualizations to show results, maybe a demo
+* Presentation: Slides with visualizations to show results
 
-**Data Sources** accident exists, weather should, event info may be web scrape
-* 
+**Data Sources** Traffic data is public and has everything I could imagine (minus personal/identifying information)
+* Accident data ([csv](https://cris.dot.state.tx.us))
+* Traffic data (csv from city of austin, google waze)
+* Weather data (likely to be available, haven't looked)
+* Event data (web scrape austin512, acl, etc)
+
+## Predicting Movie Success
+
+Predicting a movie's success (measured in either rotten tomato score or worldwide revenue)
+
+**What am I attempting?** Does the people involved with a movie (writer, director, actors, studio) predict a movie's success? Is movie length/topic an important factor? Are certain topics hard/easy to succeed with?
+
+**Expected to use:**
+* EDA: python, (AWS for big data)
+* Algorithm:
+* Presentation: Slides with visualizations to show results
+
+**Data Sources** I know datasets exist and that web scraping the following sites is possible, havent looked into it more though
+* IMDB (people involved)
+* Rotten tomato (ratings/reviews)
+* Some screenplays are publicly available via IMDB
