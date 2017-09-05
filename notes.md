@@ -42,6 +42,6 @@ I've begun exploring the Travis County traffic data for 2017. It is separated in
 
 **Merging tables**
 - Grouped person, primaryperson tables together to prevent duplicating identical columns
-- Problem with merging charges table - columns Unit_Nbr and Prsn_Nbr identical to person, primaryperson tables
+- Problem with merging charges table - columns Unit_Nbr and Prsn_Nbr identical to person, primaryperson tables. Solved by merging charges table with on key = [Charge_ID, Unit_Nbr, Prsn_Nbr]
 - Multiple persons (Prsn_Nbr) per crash, multiple charges per person
 - Some columns may be deprecated (charge cat ID stopped being used in 2010 per data dictionary)
