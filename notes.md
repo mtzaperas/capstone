@@ -2,6 +2,15 @@
 ## EDA
 I've begun exploring the Travis County traffic data for 2017. It is separated into different csv files, so the first step is joining all of them together. Some csv files have duplicated column names with different values. I need to see if the data dictionary provided indicates this is intended or not.
 
+**Columns not in data dictionary**
+*From Unit. These are populated when other columns in unit are not. Seems weird*
+- Trlr_GVWR
+-	Trlr_RGVW
+-	Trlr_Type_ID
+-	Trlr_Disabling_Dmag_ID
+*From Crash. Not text, number. No dictionary to decode it either*
+- Investigator_Narrative
+
 **Count type Column Duplication**
 *Duplicated across Crash, Person, Primary Person, Unit tables*
 - Death_Cnt
