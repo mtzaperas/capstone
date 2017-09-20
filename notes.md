@@ -8,11 +8,28 @@ https://www.quora.com/Are-police-officers-assigned-areas-to-patrol-or-do-they-ju
 ## Specific problem statement
 There are a lot of different slices I could investigate. I could look at accidents involving injuries/death, involving alochol or drugs, involving weather, who reported incident (cop saw it or civilian called it in)
 
+DUI: happens at night, as expected
+DUI: varies from month to month, year to year, not entirely consistent
+DUI weather: not an impact
+Nondui: happens in traffic hours, as expected
+Nondui: happens consistently from month to month
+Nondui weather: mostly clear, most weather incidents are cloudy and then 2nd rainy
+Who reported it?
+
 ## EDA
 To get the data, go to https://cris.dot.state.tx.us, choose \*Texas Department of Transportation and create account/login. I made requests of type public, in .csv format, for Travis County.
 I've begun exploring the Travis County traffic data for 2017. It is separated into different csv files, so the first step is joining all of them together. Some csv files have duplicated column names with different values. I need to see if the data dictionary provided indicates this is intended or not.
 
 For weather data, I'm using NOAA (govt data). I also have weather underground information I could web scrape.
+
+Austin opendata effort has published Austin Police Sectors and Districts:
+https://data.austintexas.gov/Government/Austin-Police-Sectors-and-Districts/bh6h-vpxb
+APD also defines what it considers rush hour and says it has tow trucks on standby to clear busy roads:
+http://www.austintexas.gov/page/highway-enforcement-programs
+Austin EMS publishes metrics on how its doing, and all metrics point to doing fine. No map tho:
+http://www.austintexas.gov/department/performance-metrics
+
+
 
 **Columns to split/not split on**
 Charges column was changed from categorical to free entry before 2010 (according to data dict). I'd have to manually bucket the charges, which can include abbr and multiple charges per unique charge
