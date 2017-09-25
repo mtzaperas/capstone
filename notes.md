@@ -16,6 +16,9 @@ Nondui: happens consistently from month to month
 Nondui weather: mostly clear, most weather incidents are cloudy and then 2nd rainy
 Who reported it?
 
+The avenue I decided to go down is, given information about the driver (from austin, his/her car make/model) and time of year/month/day, how likely are they to be injured in each given zip code. Could overlay that on google map routes. Could start to include information like how old the driver is, has he/she been drinking/smoking, the contributing factors (animals on road vs road rage vs drinking)
+
+It would be nice to actually predict chances of crash rather than chances of severe injuries. Austin has 3000 data points across the past 17 years on spotty locations. I could use that limited information and assume linear growth.
 ## EDA
 To get the data, go to https://cris.dot.state.tx.us, choose \*Texas Department of Transportation and create account/login. I made requests of type public, in .csv format, for Travis County.
 I've begun exploring the Travis County traffic data for 2017. It is separated into different csv files, so the first step is joining all of them together. Some csv files have duplicated column names with different values. I need to see if the data dictionary provided indicates this is intended or not.
@@ -77,13 +80,14 @@ Charges column was changed from categorical to free entry before 2010 (according
 
 **Other Duplications**
 - Crash_ID: *acts as primary key for each table*
-- Unit_Nbr: *Unit number entered on crash report for a unit involved in the crash*
+- Unit_Nbr: *number entered on crash report for each car/vehicle/bike/person involved in the crash*
 - Person, PrimaryPerson, Charges
 -  Prsn_Nbr: *The person who was charged*
   - Person, PrimaryPerson, Charges
 
 **Merging tables**
-- Grouped person, primaryperson tables together to prevent duplicating identical columns
+- Concat the person, primaryperson tables together in pandas since almost all same columns and don't have overlap in ppl discussed in each
 - Problem with merging charges table - columns Unit_Nbr and Prsn_Nbr identical to person, primaryperson tables. Solved by merging charges table with on key = [Charge_ID, Unit_Nbr, Prsn_Nbr]
 - Multiple persons (Prsn_Nbr) per crash, multiple charges per person
 - Some columns may be deprecated (charge cat ID stopped being used in 2010 per data dictionary)
+- Decided to use crash_ID as index for joining unit to crash, then to reset index to crash_ID and unit (multiindex), then to add people information. Could add further tables with new multiindex that adds prsn_nbr
