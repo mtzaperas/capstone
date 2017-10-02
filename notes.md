@@ -6,6 +6,7 @@ https://www.quora.com/Are-police-officers-assigned-areas-to-patrol-or-do-they-ju
 
 
 ## Specific problem statement
+*Police/EMS Perspective*
 There are a lot of different slices I could investigate. I could look at accidents involving injuries/death, involving alochol or drugs, involving weather, who reported incident (cop saw it or civilian called it in)
 
 DUI: happens at night, as expected
@@ -16,9 +17,17 @@ Nondui: happens consistently from month to month
 Nondui weather: mostly clear, most weather incidents are cloudy and then 2nd rainy
 Who reported it?
 
+What factors are driving the most severe crashes? Obvious is prob dui
+
+Determining ems staff. Some austin open data charts
+http://www.austintexas.gov/page/patient-contact-and-transport-data
+*Driver Perspective*
 The avenue I decided to go down is, given information about the driver (from austin, his/her car make/model) and time of year/month/day, how likely are they to be injured in each given zip code. Could overlay that on google map routes. Could start to include information like how old the driver is, has he/she been drinking/smoking, the contributing factors (animals on road vs road rage vs drinking)
 
+*Google Maps Perspective*
 It would be nice to actually predict chances of crash rather than chances of severe injuries. Austin has 3000 data points across the past 17 years on spotty locations. I could use that limited information and assume linear growth.
+
+
 ## EDA
 To get the data, go to https://cris.dot.state.tx.us, choose \*Texas Department of Transportation and create account/login. I made requests of type public, in .csv format, for Travis County.
 I've begun exploring the Travis County traffic data for 2017. It is separated into different csv files, so the first step is joining all of them together. Some csv files have duplicated column names with different values. I need to see if the data dictionary provided indicates this is intended or not.
